@@ -1,0 +1,28 @@
+body {
+    background-size: cover;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.heading {
+    width: 100%;
+    margin: 0px;
+    font-size: 30px;
+    box-shadow: 5px 5px 5px lightsteelblue;
+    padding: 15px;
+}
+
+.note {
+    font-size: 18px;
+}
+
+#song_name {
+    font-size: 20px;
+    padding: 10px;
+    box-shadow: 3px 3px 5px lightgreen;
+}
+
+canvas {
+    border: 5px solid white;
+    box-shadow: 5px 5px 5px lightgrey;
+}
