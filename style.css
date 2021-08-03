@@ -23,6 +23,20 @@ body {
 }
 
 canvas {
-    border: 5px solid white;
-    box-shadow: 5px 5px 5px lightgrey;
+    border: 5px solid lightpink;
+    box-shadow: 3px 3px 5px darksalmon;
+    animation: 2s border alternate infinite;
+    border-radius: 20px;
+}
+
+@keyframes border {
+    from {
+        border: 5px solid lightpink;
+        box-shadow: 3px 3px 5px darksalmon;
+    }
+
+    to {
+        border: 5px solid plum;
+        box-shadow: 3px 3px 5px darkorchid;
+    }
 }
