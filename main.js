@@ -5,7 +5,9 @@ leftWristY = 0;
 rightWristX = 0;
 rightWristY = 0;
 music_playing = "";
+music2_playing = "";
 leftWristScore = 0;
+rightWristScore = 0;
 
 function preload() {
     music = loadSound("Chicken Song.mp3");
@@ -34,6 +36,7 @@ function draw() {
     stroke("#FF0000");
 
     music_playing = music.isPlaying();
+    music2_playing = music2.isPlaying();
 
     if(leftWristScore > 0.2) {
         circle(leftWristX, leftWristY, 20);
@@ -43,13 +46,23 @@ function draw() {
             document.getElementById("song_name").innerHTML = "Song: Chicken Song";
         }
     }
+
+    if(rightWristScore > 0.2) {
+        circle(rightWristX, rightWristY, 20);
+        music.stop();
+        if(music2_playing == false) {
+            music2.play();
+            document.getElementById("song_name").innerHTML = "Song: DJ Music";
+        }
+    }
 }
 
 function gotPoses(results) {
     if(results.length > 0) {
         console.log(results);
         leftWristScore = results[0].pose.keypoints[9].score;
-        console.log("Left Wrist Score = " + leftWristScore);
+        rightWristScore = results[0].pose.keypoints[10].score;
+        console.log("Left Wrist Score = " + leftWristScore + ", Right Wrist Score = " + rightWristScore);
 
         leftWristX = results[0].pose.leftWrist.x;
         leftWristY = results[0].pose.leftWrist.y;
